@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2-Player Snake (Satu Perangkat)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-wrap">
+    <div class="board-card">
+      <h1>2-Player Snake — Lokal (WASD vs Arrow)</h1>
+      <p class="small">Mainkan bersama di satu perangkat. Kumpulkan makanan untuk dapat point. Tabrak dinding atau tubuh lawan = kalah.</p>
+      <div style="margin-top:12px;">
+        <canvas id="gameCanvas" width="720" height="720" style="max-width:100%;"></canvas>
+      </div>
+      <div class="meta">
+        <div class="flex" style="margin-top:8px;gap:12px;">
+          <button id="startBtn" class="btn">Start</button>
+          <button id="pauseBtn" class="btn ghost">Pause</button>
+          <button id="restartBtn" class="btn ghost">Restart</button>
+          <div style="flex:1"></div>
+          <div class="kbd">Grid: 24x24</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h1>Score & Info</h1>
+      <div class="score">
+        <div class="row"><div>Player 1 (WASD)</div><div id="score1">0</div></div>
+        <div class="row"><div>Player 2 (Arrow)</div><div id="score2">0</div></div>
+        <div class="row"><div>Food collected</div><div id="foodCount">0</div></div>
+      </div>
+
+      <div style="margin-top:12px">
+        <h1 style="font-size:14px;margin-bottom:6px">Controls</h1>
+        <div class="controls">
+          <div><span class="kbd">W</span> <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> — Player 1</div>
+          <div style="margin-top:6px"><span class="kbd">↑</span> <span class="kbd">←</span> <span class="kbd">↓</span> <span class="kbd">→</span> — Player 2</div>
+          <div style="margin-top:8px" class="small">Tekan <strong>Space</strong> untuk Pause/Resume.</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>Aturan singkat:</div>
+        <ul style="margin:6px 0 0 16px;color:var(--muted)">
+          <li>Setiap makanan memberi 1 poin.</li>
+          <li>Jika salah satu mati, lawan mendapat 3 poin dan ronde restart.</li>
+          <li>Mode terbatas: diadaptasi agar bisa dimainkan cepat.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script> 
+</body>
+</html>
